@@ -328,7 +328,11 @@ html.light .text-gradient-animated {
 .hero-collage-track {
   display: flex;
   flex-direction: column;
-  animation: collage-scroll var(--duration, 64s) linear infinite;
+  /* Propiedades largas: Safari/WebKit ignora var() dentro del shorthand `animation` */
+  animation-name: collage-scroll;
+  animation-duration: var(--duration, 64s);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
   will-change: transform;
 }
 
