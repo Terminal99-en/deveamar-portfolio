@@ -18,10 +18,13 @@ npm run preview  # previsualizar el build
 El proyecto está bajo Git desde el commit inicial (`main`). `node_modules`,
 `dist` y los archivos locales (`.env*`) quedan excluidos por `.gitignore`.
 
+Remoto privado: <https://github.com/Terminal99-en/deveamar-portfolio>
+
 ```bash
 git status
 git add .
 git commit -m "Describe el cambio"
+git push
 ```
 
 ## Estructura
