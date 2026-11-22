@@ -223,13 +223,6 @@ export const technologyGroups = {
           description:
             "Slivers, composición, animaciones implícitas y accesibilidad.",
         },
-        {
-          name: "Soporte RTL",
-          icon: "open_in_new",
-          tone: "tertiary",
-          description:
-            "Interfaces Right-to-Left para árabe y otros idiomas.",
-        },
       ],
     },
     {
@@ -301,6 +294,14 @@ export const technologyGroups = {
           tone: "tertiary",
           description:
             "Pipelines de build, test y despliegue automatizado.",
+        },
+        {
+          name: "Azure DevOps",
+          logo: asset("/icons/tech/azuredevops.svg"),
+          icon: "deployed_code",
+          tone: "primary",
+          description:
+            "Pipelines YAML, repositorios y tableros de trabajo integrados.",
         },
         {
           name: "Jira y Scrum",
