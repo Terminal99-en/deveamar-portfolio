@@ -108,7 +108,7 @@ export const webProjects = [
     tags: [
       { label: ".NET 10", tone: "primary" },
       { label: "APISIX", tone: "neutral" },
-      { label: "REDIS", tone: "tertiary" },
+      { label: "REDIS", tone: "neutral" },
       { label: "Postgre", tone: "neutral" },
       { label: "Lagos", tone: "neutral" },
       { label: "Keycloak", tone: "neutral" },
@@ -125,80 +125,447 @@ export const webProjects = [
     tone: "primary",
     tags: [
       { label: ".NET 10", tone: "primary" },
-      { label: "Code-First", tone: "secondary" },
-      { label: "Postgre", tone: "tertiary" },
+      { label: "Code-First", tone: "neutral" },
+      { label: "Postgre", tone: "neutral" },
       { label: "API REST", tone: "neutral" },
     ],
   },
 ];
 
-export const technologies = [
-  {
-    name: "React",
-    icon: "code_blocks",
-    tone: "primary",
-    level: "Avanzado",
-    description: "SPAs, hooks personalizados y arquitectura de componentes.",
-    value: 90,
-    gradient: "from-primary-container to-secondary-container",
-  },
-  {
-    name: "JavaScript (ES6+)",
-    icon: "javascript",
-    tone: "secondary",
-    level: "Avanzado",
-    description: "Asincronía, APIs REST, manipulación del DOM y módulos.",
-    value: 92,
-    gradient: "from-secondary-container to-primary-container",
-  },
-  {
-    name: "HTML5",
-    icon: "html",
-    tone: "tertiary",
-    level: "Experto",
-    description: "Estructura semántica, accesibilidad (WCAG) y SEO técnico.",
-    value: 95,
-    gradient: "from-tertiary-container to-primary-container",
-  },
-  {
-    name: "CSS3",
-    icon: "css",
-    tone: "primary",
-    level: "Experto",
-    description: "Grid, Flexbox, animaciones fluidas y Tailwind CSS.",
-    value: 95,
-    gradient: "from-primary-container to-tertiary-container",
-  },
-  {
-    name: "Desarrollo Móvil",
-    icon: "smartphone",
-    tone: "secondary",
-    level: "Avanzado",
-    description: "Apps híbridas y nativas, gestos táctiles y despliegue en stores.",
-    value: 88,
-    gradient: "from-secondary-container to-primary-container",
-  },
-  {
-    name: "Git & GitHub Pages",
-    icon: "deployed_code",
-    tone: "primary",
-    level: "Avanzado",
-    description: "Control de versiones, flujos CI/CD y despliegue estático.",
-    value: 90,
-    gradient: "from-primary-container to-secondary-container",
-  },
-  {
-    name: "Diseño UI/UX",
-    icon: "design_services",
-    tone: "tertiary",
-    level: "Avanzado",
-    description:
-      "Sistemas de diseño, prototipado interactivo, glassmorphism y micro-interacciones centradas en el usuario.",
-    value: 90,
-    gradient: "from-tertiary-container via-primary-container to-secondary-container",
-    wide: true,
-  },
-];
+export const technologyGroups = {
+  apps: [
+    {
+      id: "lenguajes",
+      title: "Lenguajes & Frameworks",
+      icon: "code",
+      tone: "primary",
+      items: [
+        {
+          name: "Flutter 3.x",
+          icon: "smartphone",
+          tone: "primary",
+          level: "Avanzado",
+          description:
+            "Apps Android e iOS con widgets propios, theming y animaciones fluidas.",
+          value: 92,
+          gradient: "from-primary-container to-secondary-container",
+        },
+        {
+          name: "Dart & POO",
+          icon: "javascript",
+          tone: "secondary",
+          level: "Avanzado",
+          description:
+            "Tipado fuerte, asincronía con Future/Stream y programación orientada a objetos.",
+          value: 90,
+          gradient: "from-secondary-container to-primary-container",
+        },
+        {
+          name: "Desarrollo Móvil",
+          icon: "deployed_code",
+          tone: "tertiary",
+          level: "Avanzado",
+          description:
+            "Publicación en stores, gestos táctiles y rendimiento en dispositivos reales.",
+          value: 88,
+          gradient: "from-tertiary-container to-primary-container",
+        },
+      ],
+    },
+    {
+      id: "arquitectura",
+      title: "Estado & Arquitectura",
+      icon: "hub",
+      tone: "secondary",
+      items: [
+        {
+          name: "Bloc & Cubit",
+          icon: "hub",
+          tone: "primary",
+          level: "Avanzado",
+          description:
+            "Eventos, estados y flujos predecibles con testeo de cada transición.",
+          value: 90,
+          gradient: "from-primary-container to-secondary-container",
+        },
+        {
+          name: "Clean Architecture & DDD",
+          icon: "code_blocks",
+          tone: "secondary",
+          level: "Avanzado",
+          description:
+            "Capas de dominio, datos y presentación con límites explícitos.",
+          value: 86,
+          gradient: "from-secondary-container to-primary-container",
+        },
+      ],
+    },
+    {
+      id: "ui",
+      title: "UI & Diseño",
+      icon: "design_services",
+      tone: "tertiary",
+      items: [
+        {
+          name: "Figma → Flutter",
+          icon: "design_services",
+          tone: "tertiary",
+          level: "Avanzado",
+          description:
+            "Implementación de alta fidelidad: spacing, tipografía y tokens del diseño.",
+          value: 92,
+          gradient: "from-tertiary-container to-primary-container",
+        },
+        {
+          name: "Layouts responsivos & theming",
+          icon: "css",
+          tone: "primary",
+          level: "Avanzado",
+          description:
+            "Adaptación a tamaños, modo claro/oscuro y sistema de design tokens.",
+          value: 90,
+          gradient: "from-primary-container to-tertiary-container",
+        },
+        {
+          name: "Widgets avanzados",
+          icon: "code_blocks",
+          tone: "secondary",
+          level: "Avanzado",
+          description:
+            "Slivers, composición, animaciones implícitas y accesibilidad.",
+          value: 88,
+          gradient: "from-secondary-container to-primary-container",
+        },
+        {
+          name: "Soporte RTL",
+          icon: "open_in_new",
+          tone: "tertiary",
+          level: "Intermedio",
+          description:
+            "Interfaces Right-to-Left para árabe y otros idiomas.",
+          value: 74,
+          gradient: "from-tertiary-container to-secondary-container",
+        },
+      ],
+    },
+    {
+      id: "datos",
+      title: "Datos & Red",
+      icon: "open_in_new",
+      tone: "primary",
+      items: [
+        {
+          name: "APIs REST / JSON",
+          icon: "open_in_new",
+          tone: "primary",
+          level: "Avanzado",
+          description:
+            "Consumo de servicios, serialización y manejo de errores con reintentos.",
+          value: 90,
+          gradient: "from-primary-container to-secondary-container",
+        },
+        {
+          name: "Autenticación JWT",
+          icon: "person",
+          tone: "secondary",
+          level: "Avanzado",
+          description:
+            "Sesiones, refresh tokens y almacenamiento seguro de credenciales.",
+          value: 88,
+          gradient: "from-secondary-container to-primary-container",
+        },
+        {
+          name: "SharedPreferences & caché",
+          icon: "receipt_long",
+          tone: "tertiary",
+          level: "Avanzado",
+          description:
+            "Persistencia local, caché offline y sincronización al recuperar red.",
+          value: 88,
+          gradient: "from-tertiary-container to-primary-container",
+        },
+        {
+          name: "Supabase",
+          icon: "diamond",
+          tone: "primary",
+          level: "Avanzado",
+          description:
+            "Auth, base de datos Postgres y storage como backend gestionado.",
+          value: 84,
+          gradient: "from-primary-container to-tertiary-container",
+        },
+      ],
+    },
+    {
+      id: "calidad",
+      title: "Calidad & Entrega",
+      icon: "check_circle",
+      tone: "secondary",
+      items: [
+        {
+          name: "Pruebas unit, widget y navegación",
+          icon: "check_circle",
+          tone: "secondary",
+          level: "Avanzado",
+          description:
+            "Cobertura de lógica, widgets y flujos de navegación críticos.",
+          value: 85,
+          gradient: "from-secondary-container to-primary-container",
+        },
+        {
+          name: "GitLab",
+          icon: "deployed_code",
+          tone: "primary",
+          level: "Avanzado",
+          description:
+            "Ramas, merge requests y code reviews con historial limpio.",
+          value: 88,
+          gradient: "from-primary-container to-secondary-container",
+        },
+        {
+          name: "CI/CD en GitLab",
+          icon: "send",
+          tone: "tertiary",
+          level: "Avanzado",
+          description:
+            "Pipelines de build, test y despliegue automatizado.",
+          value: 85,
+          gradient: "from-tertiary-container to-primary-container",
+        },
+        {
+          name: "Jira & Scrum",
+          icon: "work",
+          tone: "secondary",
+          level: "Avanzado",
+          description:
+            "Sprints, tableros Kanban y seguimiento de tareas del equipo.",
+          value: 88,
+          gradient: "from-secondary-container to-tertiary-container",
+        },
+      ],
+    },
+    {
+      id: "extras",
+      title: "Observabilidad & Extras",
+      icon: "send",
+      tone: "tertiary",
+      items: [
+        {
+          name: "Logging & monitoreo",
+          icon: "send",
+          tone: "primary",
+          level: "Avanzado",
+          description:
+            "Sentry, Firebase Crashlytics y trazas para detectar fallos en producción.",
+          value: 82,
+          gradient: "from-primary-container to-secondary-container",
+        },
+        {
+          name: "Java & Spring Boot",
+          icon: "code",
+          tone: "secondary",
+          level: "Intermedio",
+          description:
+            "Lectura de backends, contratos REST y ecosistema JVM (deseable).",
+          value: 70,
+          gradient: "from-secondary-container to-primary-container",
+        },
+        {
+          name: "Kafka & eventos",
+          icon: "hub",
+          tone: "tertiary",
+          level: "Intermedio",
+          description:
+            "Arquitecturas orientadas a eventos y mensajería asíncrona.",
+          value: 72,
+          gradient: "from-tertiary-container to-secondary-container",
+        },
+      ],
+    },
+  ],
+  backend: [
+    {
+      id: "lenguajes",
+      title: "Lenguajes & Frameworks",
+      icon: "code_blocks",
+      tone: "primary",
+      items: [
+        {
+          name: ".NET 10 / C#",
+          icon: "code_blocks",
+          tone: "primary",
+          level: "Avanzado",
+          description:
+            "APIs REST, EF Core Code-First y servicios empresariales.",
+          value: 90,
+          gradient: "from-primary-container to-secondary-container",
+        },
+        {
+          name: "Java & Spring Boot",
+          icon: "code",
+          tone: "secondary",
+          level: "Intermedio",
+          description:
+            "Servicios REST, inyección de dependencias y ecosistema JVM.",
+          value: 72,
+          gradient: "from-secondary-container to-primary-container",
+        },
+        {
+          name: "SignalR",
+          icon: "hub",
+          tone: "tertiary",
+          level: "Avanzado",
+          description:
+            "Comunicación en tiempo real sobre WebSockets para paneles y apps.",
+          value: 86,
+          gradient: "from-tertiary-container to-primary-container",
+        },
+        {
+          name: "API REST",
+          icon: "open_in_new",
+          tone: "primary",
+          level: "Avanzado",
+          description:
+            "Diseño de contratos, versionado, validación y documentación.",
+          value: 90,
+          gradient: "from-primary-container to-tertiary-container",
+        },
+      ],
+    },
+    {
+      id: "datos",
+      title: "Datos & Caché",
+      icon: "receipt_long",
+      tone: "secondary",
+      items: [
+        {
+          name: "PostgreSQL",
+          icon: "receipt_long",
+          tone: "secondary",
+          level: "Avanzado",
+          description:
+            "Modelado relacional, migraciones, índices y consultas eficientes.",
+          value: 88,
+          gradient: "from-secondary-container to-primary-container",
+        },
+        {
+          name: "Redis",
+          icon: "diamond",
+          tone: "primary",
+          level: "Avanzado",
+          description:
+            "Caché, sesiones y estructuras en memoria de baja latencia.",
+          value: 85,
+          gradient: "from-primary-container to-secondary-container",
+        },
+        {
+          name: "SQLite",
+          icon: "smartphone",
+          tone: "tertiary",
+          level: "Avanzado",
+          description: "Persistencia embebida y apps offline-first.",
+          value: 88,
+          gradient: "from-tertiary-container to-primary-container",
+        },
+        {
+          name: "Supabase",
+          icon: "deployed_code",
+          tone: "secondary",
+          level: "Avanzado",
+          description:
+            "Postgres gestionado, auth y storage con APIs listas.",
+          value: 84,
+          gradient: "from-secondary-container to-tertiary-container",
+        },
+      ],
+    },
+    {
+      id: "seguridad",
+      title: "Seguridad & Infra",
+      icon: "person",
+      tone: "tertiary",
+      items: [
+        {
+          name: "Keycloak",
+          icon: "person",
+          tone: "primary",
+          level: "Avanzado",
+          description: "Identity provider: realms, roles y OAuth2/OIDC.",
+          value: 86,
+          gradient: "from-primary-container to-secondary-container",
+        },
+        {
+          name: "APISIX",
+          icon: "hub",
+          tone: "secondary",
+          level: "Avanzado",
+          description:
+            "API gateway: rutas, plugins, rate limiting y observabilidad.",
+          value: 85,
+          gradient: "from-secondary-container to-primary-container",
+        },
+        {
+          name: "Lagos",
+          icon: "receipt_long",
+          tone: "tertiary",
+          level: "Avanzado",
+          description:
+            "Integración de facturación y cobros sobre el core del producto.",
+          value: 82,
+          gradient: "from-tertiary-container to-primary-container",
+        },
+        {
+          name: "GitLab CI/CD",
+          icon: "deployed_code",
+          tone: "primary",
+          level: "Avanzado",
+          description:
+            "Pipelines, entornos y despliegues automatizados.",
+          value: 85,
+          gradient: "from-primary-container to-tertiary-container",
+        },
+      ],
+    },
+    {
+      id: "arquitectura",
+      title: "Arquitectura & Observabilidad",
+      icon: "hub",
+      tone: "primary",
+      items: [
+        {
+          name: "Clean Architecture & DDD",
+          icon: "code_blocks",
+          tone: "secondary",
+          level: "Avanzado",
+          description:
+            "Capas, agregados y límites de dominio en servicios .NET.",
+          value: 86,
+          gradient: "from-secondary-container to-primary-container",
+        },
+        {
+          name: "Kafka & eventos",
+          icon: "hub",
+          tone: "tertiary",
+          level: "Intermedio",
+          description:
+            "Productores, consumidores y consistencia eventual.",
+          value: 72,
+          gradient: "from-tertiary-container to-secondary-container",
+        },
+        {
+          name: "Logging & monitoreo",
+          icon: "send",
+          tone: "primary",
+          level: "Avanzado",
+          description:
+            "Sentry, Firebase y métricas de salud de servicios.",
+          value: 82,
+          gradient: "from-primary-container to-secondary-container",
+        },
+      ],
+    },
+  ],
+};
 
 export const languages = [
   {
