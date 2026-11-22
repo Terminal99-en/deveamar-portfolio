@@ -112,7 +112,7 @@ export default function Header({ theme, onToggleTheme }) {
             width={512}
             height={512}
             decoding="async"
-            className="h-8 w-8 shrink-0 rounded-full object-cover ring-1 ring-hairline transition-transform duration-500 group-hover:scale-105"
+            className="h-[2.3rem] w-[2.3rem] shrink-0 rounded-full object-cover ring-1 ring-hairline transition-transform duration-500 group-hover:scale-105"
           />
           <span className="flex min-w-0 flex-col">
             <span className="font-headline-sm text-headline-sm leading-none tracking-tight text-on-surface">
