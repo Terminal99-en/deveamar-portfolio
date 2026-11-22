@@ -13,6 +13,17 @@ npm run build    # build de producción
 npm run preview  # previsualizar el build
 ```
 
+## Control de versiones
+
+El proyecto está bajo Git desde el commit inicial (`main`). `node_modules`,
+`dist` y los archivos locales (`.env*`) quedan excluidos por `.gitignore`.
+
+```bash
+git status
+git add .
+git commit -m "Describe el cambio"
+```
+
 ## Estructura
 
 ```
