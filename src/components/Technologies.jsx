@@ -20,15 +20,30 @@ const views = [
   { id: "backend", label: "Backend", section: "02 / Stack Backend" },
 ];
 
+const DARK_LOGOS = new Set(["jsonwebtokens", "apachekafka", "lago"]);
+const DIM_LOGOS = new Set(["sqlite", "keycloak", "sentry", "jira"]);
+
+function logoClass(logo) {
+  const slug = logo.split("/").pop().replace(/\.svg$/, "");
+  const size = slug === "lago" ? "h-4 w-auto" : "h-7 w-7";
+
+  if (DARK_LOGOS.has(slug)) return `${size} logo-invert`;
+  if (DIM_LOGOS.has(slug)) return `${size} logo-brighten`;
+  return size;
+}
+
 function TechCard({ technology }) {
   return (
     <div className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-hairline bg-surface-container/75 p-space-lg shadow-lg shadow-black/10 backdrop-blur-md transition-colors duration-300 hover:border-hairline-strong hover:bg-surface-container-high">
       <div className="mb-space-md flex items-center justify-between gap-2">
         {technology.logo ? (
-          <span
+          <img
+            src={technology.logo}
+            alt=""
             aria-hidden="true"
-            className={`tech-logo h-7 w-7 ${toneIcon[technology.tone]}`}
-            style={{ "--tech-logo": `url("${technology.logo}")` }}
+            loading="lazy"
+            decoding="async"
+            className={`object-contain ${logoClass(technology.logo)}`}
           />
         ) : (
           <Icon

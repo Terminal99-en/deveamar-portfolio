@@ -17,28 +17,49 @@ const NAV_LINKS = [
 const SECTION_IDS = [...NAV_LINKS.map((link) => link.id), "contacto"];
 
 function useActiveSection(ids) {
-  const [active, setActive] = useState("inicio");
+  const [active, setActive] = useState(ids[0]);
 
   useEffect(() => {
-    const sections = ids
-      .map((id) => document.getElementById(id))
-      .filter(Boolean);
+    let frame = 0;
 
-    if (!sections.length) return undefined;
+    const update = () => {
+      frame = 0;
+      const line = window.scrollY + window.innerHeight * 0.4;
+      const atBottom =
+        window.scrollY + window.innerHeight >=
+        document.documentElement.scrollHeight - 2;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (atBottom) {
+        setActive(ids[ids.length - 1]);
+        return;
+      }
 
-        if (visible) setActive(visible.target.id);
-      },
-      { rootMargin: "-20% 0px -60% 0px", threshold: [0, 0.1, 0.3, 0.6] },
-    );
+      let current = ids[0];
+      for (const id of ids) {
+        const element = document.getElementById(id);
+        if (!element) continue;
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+        const top = element.getBoundingClientRect().top + window.scrollY;
+        if (top <= line) current = id;
+      }
+
+      setActive(current);
+    };
+
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, [ids]);
 
   return active;
@@ -110,7 +131,7 @@ export default function Header({ theme, onToggleTheme }) {
                     <motion.span
                       layoutId="nav-pill"
                       className="absolute inset-0 rounded-full bg-primary-container shadow-lg shadow-primary-container/25"
-                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                      transition={{ type: "spring", stiffness: 260, damping: 34, mass: 0.9 }}
                     />
                   )}
                   <span className="relative z-10">{link.label}</span>

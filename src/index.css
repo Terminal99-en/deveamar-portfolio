@@ -233,19 +233,18 @@ html.light {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ——— Logos de tecnologías teñidos con el color del tema ——— */
-.tech-logo {
-  display: inline-block;
-  flex-shrink: 0;
-  background-color: currentColor;
-  -webkit-mask-image: var(--tech-logo);
-  mask-image: var(--tech-logo);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-size: contain;
-  mask-size: contain;
+/* ——— Logos con color de marca: ajuste de contraste en tema oscuro ——— */
+.dark .logo-invert {
+  filter: invert(1);
+}
+
+.dark .logo-brighten {
+  filter: brightness(1.9) saturate(1.1);
+}
+
+/* ——— El header fijo no debe tapar el inicio de cada sección ——— */
+section[id] {
+  scroll-margin-top: 5rem;
 }
 
 /* ——— Velo del hero, adaptado a cada tema ——— */

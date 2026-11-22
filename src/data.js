@@ -110,7 +110,7 @@ export const webProjects = [
       { label: "APISIX", tone: "neutral" },
       { label: "REDIS", tone: "neutral" },
       { label: "Postgre", tone: "neutral" },
-      { label: "Lagos", tone: "neutral" },
+      { label: "Lago", tone: "neutral" },
       { label: "Keycloak", tone: "neutral" },
     ],
   },
@@ -459,7 +459,8 @@ export const technologyGroups = {
             "API gateway: rutas, plugins, rate limiting y observabilidad.",
         },
         {
-          name: "Lagos",
+          name: "Lago",
+          logo: asset("/icons/tech/lago.svg"),
           icon: "receipt_long",
           tone: "tertiary",
           level: "Avanzado",
