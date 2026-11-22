@@ -4,6 +4,14 @@ Landing personal construida con React + Vite + Tailwind CSS v4 y Framer Motion,
 respetando la estructura y el sistema de diseño de `code.html` / `DESIGN.md`.
 Incluye tema oscuro y claro con conmutador persistente.
 
+## Sitio publicado
+
+GitHub Pages: <https://terminal99-en.github.io/deveamar-portfolio/>
+
+El despliegue lo hace `.github/workflows/deploy.yml` en cada push a `main`:
+compila con Vite y publica `dist` como artefacto de Pages (Source: GitHub
+Actions). El `base` de Vite es `/deveamar-portfolio/` en producción.
+
 ## Scripts
 
 ```bash
