@@ -109,6 +109,22 @@ export const webProjects = [
       { label: "Keycloak", tone: "neutral" },
     ],
   },
+  {
+    id: "connect-api",
+    title: "ConnectAPI",
+    role: "Backend",
+    status: "Testing",
+    description:
+      "API REST en estado de testing que conecta el módulo hotelero Zunic con una pizarra IPBX con IA integrada.",
+    icon: "hub",
+    tone: "primary",
+    tags: [
+      { label: ".NET 10", tone: "primary" },
+      { label: "Code-First", tone: "secondary" },
+      { label: "Postgre", tone: "tertiary" },
+      { label: "API REST", tone: "neutral" },
+    ],
+  },
 ];
 
 export const technologies = [
