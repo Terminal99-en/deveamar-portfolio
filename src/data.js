@@ -1,6 +1,6 @@
 // Contenido del portafolio. Las capturas provienen de code.html.
 
-const asset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+export const asset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 
 const screens = [
   { id: "storyteller-home", app: "Storyteller", alt: "Storyteller — pantalla principal", src: asset("/images/apps/storyteller-home.jpg") },

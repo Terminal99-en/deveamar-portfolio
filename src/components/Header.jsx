@@ -6,6 +6,12 @@ import {
   useScroll,
 } from "framer-motion";
 import { Icon } from "./ui";
+import { asset } from "../data";
+
+const AVATARS = {
+  dark: asset("/images/brand/avatar-black.webp"),
+  light: asset("/images/brand/avatar-white.webp"),
+};
 
 const NAV_LINKS = [
   { id: "inicio", label: "Inicio" },
@@ -100,11 +106,21 @@ export default function Header({ theme, onToggleTheme }) {
           className="group flex items-center gap-2.5"
           aria-label="Deveamar — inicio"
         >
-          <span className="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-primary-container via-secondary-container to-tertiary-container shadow-lg shadow-primary-container/30 transition-transform duration-500 group-hover:rotate-[20deg]">
-            <span className="h-2.5 w-2.5 rounded-full bg-surface" />
-          </span>
-          <span className="font-headline-sm text-headline-sm tracking-tight text-on-surface">
-            Deveamar
+          <img
+            src={theme === "light" ? AVATARS.light : AVATARS.dark}
+            alt=""
+            width={512}
+            height={512}
+            decoding="async"
+            className="h-8 w-8 shrink-0 rounded-full object-cover ring-1 ring-hairline transition-transform duration-500 group-hover:scale-105"
+          />
+          <span className="flex min-w-0 flex-col">
+            <span className="font-headline-sm text-headline-sm leading-none tracking-tight text-on-surface">
+              Deveamar
+            </span>
+            <span className="mt-1 truncate font-label-sm text-label-sm leading-none text-on-surface-variant">
+              Ernesto Acosta Martínez
+            </span>
           </span>
         </a>
 
