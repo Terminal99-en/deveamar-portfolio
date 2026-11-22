@@ -38,6 +38,7 @@ function ProjectCard({ project, index }) {
   }
 
   const featured = Boolean(project.featured);
+  const images = project.images ?? [];
 
   return (
     <Reveal
@@ -74,33 +75,56 @@ function ProjectCard({ project, index }) {
               featured ? "flex shrink-0 gap-space-sm" : "shrink-0"
             }
           >
-            {project.images?.length ? (
-              project.images.map((image, imageIndex) => (
-                <div
-                  key={image.src}
-                  className={`overflow-hidden rounded-[0.75rem] bg-surface-container-lowest shadow-md ${
-                    featured && imageIndex === 1 ? "hidden sm:block" : ""
+            {images.length > 1 ? (
+              <div
+                className={`flex shrink-0 items-center ${
+                  featured ? "-space-x-10" : "-space-x-8"
+                }`}
+              >
+                {images.map((image, imageIndex) => {
+                  const offset = imageIndex - (images.length - 1) / 2;
+
+                  return (
+                    <div
+                      key={image.src}
+                      style={{
+                        "--fan-rotate": `${Math.max(-9, Math.min(9, offset * 12))}deg`,
+                        "--fan-spread": `${Math.max(-18, Math.min(18, offset * 18))}px`,
+                      }}
+                      className="relative overflow-hidden rounded-[0.75rem] border border-hairline bg-surface-container-lowest shadow-lg shadow-black/30 rotate-[var(--fan-rotate)] transition-transform duration-500 ease-out group-hover:translate-x-[var(--fan-spread)] group-hover:rotate-0 motion-reduce:transition-none"
+                    >
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        width={288}
+                        height={512}
+                        loading="lazy"
+                        decoding="async"
+                        className={`aspect-[9/16] object-cover ${
+                          featured ? "w-24 sm:w-28" : "w-20"
+                        }`}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            ) : images.length === 1 ? (
+              <div className="overflow-hidden rounded-[0.75rem] bg-surface-container-lowest shadow-md">
+                <img
+                  src={images[0].src}
+                  alt={images[0].alt}
+                  width={288}
+                  height={512}
+                  loading="lazy"
+                  decoding="async"
+                  className={`aspect-[9/16] object-cover transition-transform duration-500 ease-out group-hover:scale-105 ${
+                    featured ? "w-32" : "w-28"
                   }`}
-                >
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    width={288}
-                    height={512}
-                    loading="lazy"
-                    decoding="async"
-                    className={`aspect-[9/16] object-cover transition-transform duration-500 ease-out group-hover:scale-105 ${
-                      featured ? "w-32" : "w-28"
-                    }`}
-                  />
-                </div>
-              ))
+                />
+              </div>
             ) : (
               <div className="grid aspect-[9/16] w-28 shrink-0 place-items-center overflow-hidden rounded-[0.75rem] border border-hairline bg-gradient-to-br from-primary-container/30 via-secondary-container/20 to-tertiary-container/25 shadow-md">
-                <Icon
-                  name={project.icon}
-                  className="text-[32px] text-primary"
-                />
+                <Icon name={project.icon} className="text-[32px] text-primary" />
               </div>
             )}
           </div>

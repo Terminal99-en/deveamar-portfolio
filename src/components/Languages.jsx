@@ -5,11 +5,13 @@ import { EASE, Reveal, SectionLabel } from "./ui";
 const toneRing = {
   primary: "text-primary",
   secondary: "text-secondary",
+  tertiary: "text-tertiary",
 };
 
 const toneBadge = {
   primary: "bg-primary-container/30 text-primary",
   secondary: "bg-secondary-container/30 text-secondary",
+  tertiary: "bg-tertiary-container/30 text-tertiary",
 };
 
 export default function Languages() {
@@ -22,11 +24,11 @@ export default function Languages() {
         <Reveal className="mb-space-xl">
           <SectionLabel className="text-tertiary">03 / Comunicación</SectionLabel>
           <h2 className="mt-space-xs font-headline-lg text-headline-lg-mobile text-on-surface sm:text-headline-lg">
-            Idiomas
+            Idiomas y habilidades
           </h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-space-lg md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-space-lg md:grid-cols-2 lg:grid-cols-3">
           {languages.map((language, index) => (
             <Reveal key={language.name} delay={index * 0.1}>
               <div className="flex items-center gap-space-lg rounded-lg border border-hairline bg-surface-container/80 p-space-lg shadow-xl shadow-black/20 backdrop-blur-xl sm:p-space-xl">

@@ -83,8 +83,8 @@ export default function Hero() {
             variants={item}
             className="font-display-lg text-display-lg-mobile text-on-surface sm:text-display-lg"
           >
-            Desarrollador de Apps &amp;{" "}
-            <span className="text-gradient-animated">Experiencias Digitales</span>
+            Desarrollador de {" "}
+            <span className="text-gradient-animated">Apps y Backend</span>
           </motion.h1>
 
           <motion.p

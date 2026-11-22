@@ -1,22 +1,27 @@
 // Contenido del portafolio. Las capturas provienen de code.html.
 
+const asset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 const screens = [
-  { id: "storyteller-home", app: "Storyteller", alt: "Storyteller — pantalla principal", src: "/images/apps/storyteller-home.jpg" },
-  { id: "storyteller-categories", app: "Storyteller", alt: "Storyteller — categorías", src: "/images/apps/storyteller-categories.jpg" },
-  { id: "spinel-tools", app: "Spinel", alt: "Spinel — herramientas", src: "/images/apps/spinel-tools.jpg" },
-  { id: "spinel-notes", app: "Spinel", alt: "Spinel — notas e invitados", src: "/images/apps/spinel-notes.jpg" },
-  { id: "tankr-map", app: "Tankr", alt: "Tankr — mapa", src: "/images/apps/tankr-map.jpg" },
-  { id: "tankr-calendar", app: "Tankr", alt: "Tankr — calendario", src: "/images/apps/tankr-calendar.jpg" },
-  { id: "invox-control", app: "Invox", alt: "Invox — control de facturación", src: "/images/apps/invox-control.jpg" },
-  { id: "atrium-panel", app: "Atrium", alt: "Atrium — panel gestor", src: "/images/apps/atrium-panel.jpg" },
+  { id: "storyteller-home", app: "Storyteller", alt: "Storyteller — pantalla principal", src: asset("/images/apps/storyteller-home.jpg") },
+  { id: "storyteller-categories", app: "Storyteller", alt: "Storyteller — categorías", src: asset("/images/apps/storyteller-categories.jpg") },
+  { id: "spinel-tools", app: "Spinel", alt: "Spinel — herramientas", src: asset("/images/apps/spinel-tools.jpg") },
+  { id: "spinel-notes", app: "Spinel", alt: "Spinel — notas e invitados", src: asset("/images/apps/spinel-notes.jpg") },
+  { id: "tankr-map", app: "Tankr", alt: "Tankr — mapa", src: asset("/images/apps/tankr-map.jpg") },
+  { id: "tankr-calendar", app: "Tankr", alt: "Tankr — calendario", src: asset("/images/apps/tankr-calendar.jpg") },
+  { id: "invox-control", app: "Invox", alt: "Invox — control de facturación", src: asset("/images/apps/invox-control.jpg") },
+  { id: "atrium-panel", app: "Atrium", alt: "Atrium — panel gestor", src: asset("/images/apps/atrium-panel.jpg") },
 ];
 
 const covers = {
-  storyteller: "/images/apps/storyteller-cover.jpg",
-  spinel: "/images/apps/spinel-notes.jpg",
-  tankr: "/images/apps/tankr-cover.jpg",
-  invox: "/images/apps/invox-cover.jpg",
-  atrium: "/images/apps/atrium-cover.jpg",
+  storyteller_home: asset("/images/apps/storyteller-categories.jpg"),
+  storyteller_plans: asset("/images/apps/storyteller-cover.jpg"),
+  spinel_home: asset("/images/apps/spinel-notes.jpg"),
+  spinel_tools: asset("/images/apps/spinel-tools.jpg"),
+  tankr_home: asset("/images/apps/tankr-calendar.jpg"),
+  tankr_map: asset("/images/apps/tankr-cover.jpg"),
+  invox: asset("/images/apps/invox-cover.jpg"),
+  atrium: asset("/images/apps/atrium-cover.jpg"),
 };
 
 export { screens };
@@ -26,10 +31,10 @@ export const mobileProjects = [
     id: "storyteller",
     title: "Storyteller",
     description:
-      "Plataforma interactiva de lectura y narrativas digitales con modo nocturno adaptativo, marcadores inteligentes y animaciones de transición fluidas.",
+      "Plataforma interactiva de lectura y narrativas digitales con marcadores inteligentes y animaciones de transición fluidas.",
     icon: "auto_stories",
     tone: "primary",
-    images: [{ src: covers.storyteller, alt: "Storyteller App" }],
+    images: [{ src: covers.storyteller_home, alt: "Storyteller App" }, { src: covers.storyteller_plans, alt: "Storyteller App" }],
     tags: [
       { label: "Flutter", tone: "primary" },
       { label: "Móvil", tone: "secondary" },
@@ -39,10 +44,10 @@ export const mobileProjects = [
     id: "spinel",
     title: "Spinel",
     description:
-      "Aplicación de productividad y gestión visual de hábitos diarios con métricas en tiempo real, recordatorios inteligentes y sincronización en la nube.",
+      "Aplicación de productividad y gestión visual de notas, tareas, y recordatorios. Herramientas integradas para facilitar el trabajo diario.",
     icon: "diamond",
     tone: "secondary",
-    images: [{ src: covers.spinel, alt: "Spinel App" }],
+    images: [{ src: covers.spinel_home, alt: "Spinel App" },{ src: covers.spinel_tools, alt: "Spinel App" }],
     tags: [
       { label: "Flutter", tone: "primary" },
       { label: "Móvil", tone: "secondary" },
@@ -52,10 +57,10 @@ export const mobileProjects = [
     id: "tankr",
     title: "Tankr",
     description:
-      "Herramienta móvil para control de consumo, historial de repostajes y cálculo de eficiencia de vehículos con gráficos comparativos claros.",
+      "Herramienta móvil para control de consumo de combustible, historial de repostajes y cálculo de eficiencia de vehículos con gráficos comparativos claros.",
     icon: "local_gas_station",
     tone: "tertiary",
-    images: [{ src: covers.tankr, alt: "Tankr App" }],
+    images: [{ src: covers.tankr_home, alt: "Tankr App" },{ src: covers.tankr_map, alt: "Tankr App" }],
     tags: [
       { label: "Flutter", tone: "primary" },
       { label: "Móvil", tone: "secondary" },
@@ -65,7 +70,7 @@ export const mobileProjects = [
     id: "invox",
     title: "Invox",
     description:
-      "Gestor ágil de facturación y presupuestos para freelancers, con generación instantánea de PDF, seguimiento de pagos y panel de ingresos.",
+      "Gestor ágil de inventario y activos fijos para freelancers, con generación instantánea de PDF, seguimiento de activos y panel de control.",
     icon: "receipt_long",
     tone: "primary",
     images: [{ src: covers.invox, alt: "Invox App" }],
@@ -208,11 +213,20 @@ export const languages = [
   {
     name: "Inglés",
     badge: "Técnico",
-    label: "B2/C1",
-    percent: 82,
+    label: "B2",
+    percent: 75,
     tone: "secondary",
     description:
-      "Lectura fluida de documentación oficial, code reviews, redacción técnica y reuniones internacionales.",
+      "Lectura y escritura fluida. Traducción simultánea",
+  },
+  {
+    name: "Locución",
+    badge: "Habilidad",
+    label: "90%",
+    percent: 90,
+    tone: "tertiary",
+    description:
+      "Locución y presentación de contenido para videos, demos de producto y piezas de marca con dicción clara y ritmo natural.",
   },
 ];
 
@@ -252,7 +266,7 @@ export const contactLinks = [
     value: contact.phone,
     href: contact.whatsapp,
     icon: "whatsapp",
-    tone: "tertiary",
+    tone: "whatsapp",
     external: true,
   },
 ];

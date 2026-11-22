@@ -6,6 +6,7 @@ const toneCircle = {
   primary: "bg-primary-container/25 text-primary",
   secondary: "bg-secondary-container/25 text-secondary",
   tertiary: "bg-tertiary-container/25 text-tertiary",
+  whatsapp: "bg-[#25D366]/15 text-[#25D366]",
 };
 
 function WhatsAppIcon({ className = "" }) {
@@ -46,9 +47,8 @@ export default function Contact() {
               ¿Construimos algo juntos?
             </h2>
             <p className="mt-space-sm font-body-md text-body-md text-on-surface-variant">
-              Estoy abierto a nuevas oportunidades laborales, proyectos
-              freelance de aplicaciones móviles o colaboraciones en productos
-              digitales.
+              Si tienes una idea que quieres materializar, un negocio que digitalizar
+              o si necesitas ayuda con tu proyecto, puedes contactarme y agendaremos una entrevista.
             </p>
           </div>
 
