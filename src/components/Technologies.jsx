@@ -16,10 +16,11 @@ const views = [
 
 const DARK_LOGOS = new Set(["jsonwebtokens", "apachekafka", "lago"]);
 const DIM_LOGOS = new Set(["sqlite", "keycloak", "sentry", "jira"]);
+const WORDMARK_LOGOS = new Set(["lago", "oracle"]);
 
 function logoClass(logo) {
   const slug = logo.split("/").pop().replace(/\.svg$/, "");
-  const size = slug === "lago" ? "h-4 w-auto" : "h-7 w-7";
+  const size = WORDMARK_LOGOS.has(slug) ? "h-4 w-auto" : "h-7 w-7";
 
   if (DARK_LOGOS.has(slug)) return `${size} logo-invert`;
   if (DIM_LOGOS.has(slug)) return `${size} logo-brighten`;

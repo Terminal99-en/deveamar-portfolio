@@ -385,6 +385,14 @@ export const technologyGroups = {
             "Modelado relacional, migraciones, índices y consultas eficientes.",
         },
         {
+          name: "Oracle",
+          logo: asset("/icons/tech/oracle.svg"),
+          icon: "receipt_long",
+          tone: "tertiary",
+          description:
+            "Esquemas relacionales, consultas y migraciones en entornos empresariales.",
+        },
+        {
           name: "Redis",
           logo: asset("/icons/tech/redis.svg"),
           icon: "diamond",
@@ -411,7 +419,7 @@ export const technologyGroups = {
     },
     {
       id: "seguridad",
-      title: "Seguridad y Infra",
+      title: "Seguridad e Infraestructura",
       icon: "person",
       tone: "tertiary",
       items: [
