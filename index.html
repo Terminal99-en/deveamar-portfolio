@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10131c" />
+    <script>
+      // Aplica el tema antes del primer pintado para evitar destellos.
+      (function () {
+        try {
+          var stored = localStorage.getItem("deveamar-theme");
+          var theme =
+            stored === "light" || stored === "dark" ? stored : "dark";
+          var root = document.documentElement;
+          root.classList.remove("light", "dark");
+          root.classList.add(theme);
+          root.style.colorScheme = theme;
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) {
+            meta.setAttribute(
+              "content",
+              theme === "light" ? "#f7f6fc" : "#10131c",
+            );
+          }
+        } catch (error) {
+          /* Sin almacenamiento disponible se mantiene el tema oscuro. */
+        }
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="description"
+      content="Portafolio de Deveamar: desarrollo de aplicaciones móviles y experiencias digitales con React, JavaScript, UI/UX y productos publicados."
+    />
+    <title>Deveamar — Apps &amp; Experiencias Digitales</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
