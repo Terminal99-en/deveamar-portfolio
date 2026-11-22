@@ -101,28 +101,38 @@ export default function Header({ theme, onToggleTheme }) {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-12">
-        <a
-          href="#inicio"
-          className="group flex items-center gap-2.5"
-          aria-label="Deveamar — inicio"
-        >
-          <img
-            src={theme === "light" ? AVATARS.light : AVATARS.dark}
-            alt=""
-            width={512}
-            height={512}
-            decoding="async"
-            className="h-[2.3rem] w-[2.3rem] shrink-0 rounded-full object-cover ring-1 ring-hairline transition-transform duration-500 group-hover:scale-105"
-          />
-          <span className="flex min-w-0 flex-col">
+        <div className="flex items-center gap-2.5">
+          <a
+            href="#contacto"
+            aria-label="Ir a la sección de contacto"
+            className="group relative inline-flex shrink-0 rounded-full"
+          >
+            <img
+              src={theme === "light" ? AVATARS.light : AVATARS.dark}
+              alt="Ernesto Acosta Martínez"
+              width={512}
+              height={512}
+              decoding="async"
+              className="h-[2.3rem] w-[2.3rem] rounded-full object-cover ring-1 ring-hairline transition-transform duration-500 group-hover:scale-105"
+            />
+            <span
+              aria-hidden="true"
+              className="absolute bottom-0 right-0 h-1.5 w-1.5 rounded-full bg-primary ring-2 ring-surface"
+            />
+          </a>
+          <a
+            href="#inicio"
+            className="group flex min-w-0 flex-col"
+            aria-label="Deveamar — inicio"
+          >
             <span className="font-headline-sm text-headline-sm leading-none tracking-tight text-on-surface">
               Deveamar
             </span>
             <span className="mt-1 truncate font-label-sm text-label-sm leading-none text-on-surface-variant">
               Ernesto Acosta Martínez
             </span>
-          </span>
-        </a>
+          </a>
+        </div>
 
         <div className="flex items-center gap-space-lg">
           <nav
