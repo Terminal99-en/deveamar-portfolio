@@ -454,6 +454,14 @@ export const technologyGroups = {
           description:
             "Pipelines, entornos y despliegues automatizados.",
         },
+        {
+          name: "Docker y contenedores",
+          logo: asset("/icons/tech/docker.svg"),
+          icon: "deployed_code",
+          tone: "secondary",
+          description:
+            "Imágenes, contenedores y entornos reproducibles para servicios .NET.",
+        },
       ],
     },
     {
