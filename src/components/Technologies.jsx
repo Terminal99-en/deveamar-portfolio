@@ -9,12 +9,6 @@ const toneIcon = {
   tertiary: "text-tertiary",
 };
 
-const toneBadge = {
-  primary: "bg-primary-container/25 text-primary",
-  secondary: "bg-secondary-container/25 text-secondary",
-  tertiary: "bg-tertiary-container/25 text-tertiary",
-};
-
 const views = [
   { id: "apps", label: "Apps", section: "02 / Stack Móvil" },
   { id: "backend", label: "Backend", section: "02 / Stack Backend" },
@@ -35,7 +29,7 @@ function logoClass(logo) {
 function TechCard({ technology }) {
   return (
     <div className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-hairline bg-surface-container/75 p-space-lg shadow-lg shadow-black/10 backdrop-blur-md transition-colors duration-300 hover:border-hairline-strong hover:bg-surface-container-high">
-      <div className="mb-space-md flex items-center justify-between gap-2">
+      <div className="mb-space-md flex items-center gap-2">
         {technology.logo ? (
           <img
             src={technology.logo}
@@ -51,13 +45,6 @@ function TechCard({ technology }) {
             className={`text-[28px] ${toneIcon[technology.tone]}`}
           />
         )}
-        <span
-          className={`rounded-full px-space-sm py-space-xs font-label-sm text-label-sm ${
-            toneBadge[technology.tone]
-          }`}
-        >
-          {technology.level}
-        </span>
       </div>
 
       <h3 className="font-title-md text-title-md text-on-surface">
@@ -133,10 +120,6 @@ export default function Technologies() {
           {groups.map((group) => (
             <div key={group.id}>
               <div className="mb-space-md flex items-center gap-space-sm">
-                <Icon
-                  name={group.icon}
-                  className={`text-[20px] ${toneIcon[group.tone]}`}
-                />
                 <h3 className="font-label-lg text-label-lg uppercase tracking-[0.18em] text-on-surface-variant">
                   {group.title}
                 </h3>
