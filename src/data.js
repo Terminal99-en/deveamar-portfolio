@@ -145,7 +145,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/flutter.svg"),
           icon: "smartphone",
           tone: "primary",
-          level: "Avanzado",
           description:
             "Apps Android e iOS con widgets propios, theming y animaciones fluidas.",
         },
@@ -154,7 +153,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/dart.svg"),
           icon: "javascript",
           tone: "secondary",
-          level: "Avanzado",
           description:
             "Tipado fuerte, asincronía con Future/Stream y programación orientada a objetos.",
         },
@@ -162,7 +160,6 @@ export const technologyGroups = {
           name: "Desarrollo Móvil",
           icon: "deployed_code",
           tone: "tertiary",
-          level: "Avanzado",
           description:
             "Publicación en stores, gestos táctiles y rendimiento en dispositivos reales.",
         },
@@ -178,7 +175,6 @@ export const technologyGroups = {
           name: "Bloc y Cubit",
           icon: "hub",
           tone: "primary",
-          level: "Avanzado",
           description:
             "Eventos, estados y flujos predecibles con testeo de cada transición.",
         },
@@ -186,7 +182,6 @@ export const technologyGroups = {
           name: "Provider",
           icon: "code_blocks",
           tone: "primary",
-          level: "Avanzado",
           description:
             "Gestión de estado ligera con ChangeNotifier e inyección de dependencias.",
         },
@@ -194,7 +189,6 @@ export const technologyGroups = {
           name: "Clean Architecture y DDD",
           icon: "code_blocks",
           tone: "secondary",
-          level: "Avanzado",
           description:
             "Capas de dominio, datos y presentación con límites explícitos.",
         },
@@ -211,7 +205,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/figma.svg"),
           icon: "design_services",
           tone: "tertiary",
-          level: "Avanzado",
           description:
             "Implementación de alta fidelidad: spacing, tipografía y tokens del diseño.",
         },
@@ -220,7 +213,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/css.svg"),
           icon: "css",
           tone: "primary",
-          level: "Avanzado",
           description:
             "Adaptación a tamaños, modo claro/oscuro y sistema de design tokens.",
         },
@@ -228,7 +220,6 @@ export const technologyGroups = {
           name: "Widgets avanzados",
           icon: "code_blocks",
           tone: "secondary",
-          level: "Avanzado",
           description:
             "Slivers, composición, animaciones implícitas y accesibilidad.",
         },
@@ -236,7 +227,6 @@ export const technologyGroups = {
           name: "Soporte RTL",
           icon: "open_in_new",
           tone: "tertiary",
-          level: "Intermedio",
           description:
             "Interfaces Right-to-Left para árabe y otros idiomas.",
         },
@@ -253,7 +243,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/openapiinitiative.svg"),
           icon: "open_in_new",
           tone: "primary",
-          level: "Avanzado",
           description:
             "Consumo de servicios, serialización y manejo de errores con reintentos.",
         },
@@ -262,7 +251,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/jsonwebtokens.svg"),
           icon: "person",
           tone: "secondary",
-          level: "Avanzado",
           description:
             "Sesiones, refresh tokens y almacenamiento seguro de credenciales.",
         },
@@ -271,7 +259,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/android.svg"),
           icon: "receipt_long",
           tone: "tertiary",
-          level: "Avanzado",
           description:
             "Persistencia local, caché offline y sincronización al recuperar red.",
         },
@@ -280,7 +267,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/supabase.svg"),
           icon: "diamond",
           tone: "primary",
-          level: "Avanzado",
           description:
             "Auth, base de datos Postgres y storage como backend gestionado.",
         },
@@ -297,7 +283,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/testinglibrary.svg"),
           icon: "check_circle",
           tone: "secondary",
-          level: "Avanzado",
           description:
             "Cobertura de lógica, widgets y flujos de navegación críticos.",
         },
@@ -306,7 +291,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/gitlab.svg"),
           icon: "deployed_code",
           tone: "primary",
-          level: "Avanzado",
           description:
             "Ramas, merge requests y code reviews con historial limpio.",
         },
@@ -315,7 +299,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/gitlab.svg"),
           icon: "send",
           tone: "tertiary",
-          level: "Avanzado",
           description:
             "Pipelines de build, test y despliegue automatizado.",
         },
@@ -324,7 +307,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/jira.svg"),
           icon: "work",
           tone: "secondary",
-          level: "Avanzado",
           description:
             "Sprints, tableros Kanban y seguimiento de tareas del equipo.",
         },
@@ -341,7 +323,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/sentry.svg"),
           icon: "send",
           tone: "primary",
-          level: "Avanzado",
           description:
             "Sentry, Firebase Crashlytics y trazas para detectar fallos en producción.",
         },
@@ -350,7 +331,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/apachekafka.svg"),
           icon: "hub",
           tone: "tertiary",
-          level: "Intermedio",
           description:
             "Arquitecturas orientadas a eventos y mensajería asíncrona.",
         },
@@ -369,7 +349,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/dotnet.svg"),
           icon: "code_blocks",
           tone: "primary",
-          level: "Avanzado",
           description:
             "APIs REST, EF Core Code-First y servicios empresariales.",
         },
@@ -378,7 +357,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/dotnet.svg"),
           icon: "hub",
           tone: "tertiary",
-          level: "Avanzado",
           description:
             "Comunicación en tiempo real sobre WebSockets para paneles y apps.",
         },
@@ -387,7 +365,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/openapiinitiative.svg"),
           icon: "open_in_new",
           tone: "primary",
-          level: "Avanzado",
           description:
             "Diseño de contratos, versionado, validación y documentación.",
         },
@@ -404,7 +381,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/postgresql.svg"),
           icon: "receipt_long",
           tone: "secondary",
-          level: "Avanzado",
           description:
             "Modelado relacional, migraciones, índices y consultas eficientes.",
         },
@@ -413,7 +389,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/redis.svg"),
           icon: "diamond",
           tone: "primary",
-          level: "Avanzado",
           description:
             "Caché, sesiones y estructuras en memoria de baja latencia.",
         },
@@ -422,7 +397,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/sqlite.svg"),
           icon: "smartphone",
           tone: "tertiary",
-          level: "Avanzado",
           description: "Persistencia embebida y apps offline-first.",
         },
         {
@@ -430,7 +404,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/supabase.svg"),
           icon: "deployed_code",
           tone: "secondary",
-          level: "Avanzado",
           description:
             "Postgres gestionado, auth y storage con APIs listas.",
         },
@@ -447,14 +420,12 @@ export const technologyGroups = {
           logo: asset("/icons/tech/keycloak.svg"),
           icon: "person",
           tone: "primary",
-          level: "Avanzado",
           description: "Identity provider: realms, roles y OAuth2/OIDC.",
         },
         {
           name: "APISIX",
           icon: "hub",
           tone: "secondary",
-          level: "Avanzado",
           description:
             "API gateway: rutas, plugins, rate limiting y observabilidad.",
         },
@@ -463,7 +434,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/lago.svg"),
           icon: "receipt_long",
           tone: "tertiary",
-          level: "Avanzado",
           description:
             "Integración de facturación y cobros sobre el core del producto.",
         },
@@ -472,7 +442,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/gitlab.svg"),
           icon: "deployed_code",
           tone: "primary",
-          level: "Avanzado",
           description:
             "Pipelines, entornos y despliegues automatizados.",
         },
@@ -488,7 +457,6 @@ export const technologyGroups = {
           name: "Clean Architecture y DDD",
           icon: "code_blocks",
           tone: "secondary",
-          level: "Avanzado",
           description:
             "Capas, agregados y límites de dominio en servicios .NET.",
         },
@@ -497,7 +465,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/apachekafka.svg"),
           icon: "hub",
           tone: "tertiary",
-          level: "Intermedio",
           description:
             "Productores, consumidores y consistencia eventual.",
         },
@@ -506,7 +473,6 @@ export const technologyGroups = {
           logo: asset("/icons/tech/sentry.svg"),
           icon: "send",
           tone: "primary",
-          level: "Avanzado",
           description:
             "Sentry, Firebase y métricas de salud de servicios.",
         },
