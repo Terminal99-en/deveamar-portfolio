@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { technologyGroups } from "../data";
-import { EASE, Icon, Reveal, SectionLabel } from "./ui";
+import { Icon, Reveal, SectionLabel } from "./ui";
 
 const toneIcon = {
   primary: "text-primary",
@@ -20,14 +20,22 @@ const views = [
   { id: "backend", label: "Backend", section: "02 / Stack Backend" },
 ];
 
-function TechCard({ technology, index }) {
+function TechCard({ technology }) {
   return (
-    <div className="group relative h-full overflow-hidden rounded-lg border border-hairline bg-surface-container/75 p-space-lg shadow-lg shadow-black/10 backdrop-blur-md transition-colors duration-300 hover:border-hairline-strong hover:bg-surface-container-high">
+    <div className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-hairline bg-surface-container/75 p-space-lg shadow-lg shadow-black/10 backdrop-blur-md transition-colors duration-300 hover:border-hairline-strong hover:bg-surface-container-high">
       <div className="mb-space-md flex items-center justify-between gap-2">
-        <Icon
-          name={technology.icon}
-          className={`text-[28px] ${toneIcon[technology.tone]}`}
-        />
+        {technology.logo ? (
+          <span
+            aria-hidden="true"
+            className={`tech-logo h-7 w-7 ${toneIcon[technology.tone]}`}
+            style={{ "--tech-logo": `url("${technology.logo}")` }}
+          />
+        ) : (
+          <Icon
+            name={technology.icon}
+            className={`text-[28px] ${toneIcon[technology.tone]}`}
+          />
+        )}
         <span
           className={`rounded-full px-space-sm py-space-xs font-label-sm text-label-sm ${
             toneBadge[technology.tone]
@@ -43,20 +51,6 @@ function TechCard({ technology, index }) {
       <p className="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
         {technology.description}
       </p>
-
-      <div className="mt-space-md h-1.5 w-full overflow-hidden rounded-full bg-surface-container-lowest">
-        <motion.div
-          className={`h-full rounded-full bg-gradient-to-r ${technology.gradient}`}
-          initial={{ width: 0 }}
-          whileInView={{ width: `${technology.value}%` }}
-          viewport={{ once: true, amount: 0.6 }}
-          transition={{
-            duration: 1.2,
-            delay: 0.15 + index * 0.05,
-            ease: EASE,
-          }}
-        />
-      </div>
     </div>
   );
 }
@@ -75,7 +69,7 @@ export default function Technologies() {
               {activeView.section}
             </SectionLabel>
             <h2 className="mt-space-xs font-headline-lg text-headline-lg-mobile text-on-surface sm:text-headline-lg">
-              Tecnologías &amp; Herramientas
+              Tecnologías y Herramientas
             </h2>
           </div>
 
@@ -121,7 +115,7 @@ export default function Technologies() {
           role="tabpanel"
           className="space-y-space-xl"
         >
-          {groups.map((group, groupIndex) => (
+          {groups.map((group) => (
             <div key={group.id}>
               <div className="mb-space-md flex items-center gap-space-sm">
                 <Icon
@@ -138,16 +132,9 @@ export default function Technologies() {
               </div>
 
               <div className="grid grid-cols-1 gap-space-md sm:grid-cols-2 lg:grid-cols-4">
-                {group.items.map((technology, index) => (
-                  <Reveal
-                    key={technology.name}
-                    delay={index * 0.04}
-                    className="h-full"
-                  >
-                    <TechCard
-                      technology={technology}
-                      index={groupIndex * 3 + index}
-                    />
+                {group.items.map((technology) => (
+                  <Reveal key={technology.name} className="h-full">
+                    <TechCard technology={technology} />
                   </Reveal>
                 ))}
               </div>

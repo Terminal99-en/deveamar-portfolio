@@ -233,6 +233,21 @@ html.light {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ——— Logos de tecnologías teñidos con el color del tema ——— */
+.tech-logo {
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  -webkit-mask-image: var(--tech-logo);
+  mask-image: var(--tech-logo);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
 /* ——— Velo del hero, adaptado a cada tema ——— */
 .hero-veil {
   background-image:
